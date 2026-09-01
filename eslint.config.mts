@@ -31,9 +31,6 @@ export default defineConfig([
     plugins: {
     },
     ...js.configs.recommended,
-    rules: {
-      "prettier/prettier": "error",
-    },
   },
 
   // -----------------------------
@@ -60,8 +57,6 @@ export default defineConfig([
       // JSX runtime: no React import needed
       "react/react-in-jsx-scope": "off",
 
-      // Prettier reports formatting issues but does not conflict
-      "prettier/prettier": "error",
 
       // Enforce self-closing tags where possible
       "react/self-closing-comp": "error",
