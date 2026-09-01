@@ -12,6 +12,15 @@ on:
   workflow_dispatch:
 
 jobs:
+  learn:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print event
+        run: |
+          echo "${{github.event_name}}"
+          echo "${{github.repository_owner}}"
+          echo "${{secrets.GITHUB_TOKEN}}"
+          echo "${{github.triggering_actor}}"
   eslint:
     runs-on: ubuntu-latest
     steps:
@@ -35,7 +44,6 @@ jobs:
 
       - name: Install Bun
         uses: oven-sh/setup-bun@v2
-
 
       - name: Install dependencies
         run: bun install --ignore-scripts --frozen-lockfile
@@ -63,17 +71,12 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v7
-        with:
-          submodules: recursive
 
       - name: Install Bun
         uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
         run: bun install --ignore-scripts --frozen-lockfile
-
-      - name: Sync markdown content
-        run: bun run sync-markdown
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -91,7 +94,7 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
-          tags: ghcr.io/umanitoba-cssa/cssa-website-next:${{ steps.vars.outputs.IMAGE_TAG }}
+          tags: ghcr.io/fopefoluwaikufisile/learnghcr:${{ steps.vars.outputs.IMAGE_TAG }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: |
