@@ -94,7 +94,7 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
-          tags: ghcr.io/umanitoba-cssa/cssa-website-next:${{ steps.vars.outputs.IMAGE_TAG }}
+          tags: ghcr.io/FopefoluwaIkufisile/learnghcr:${{ steps.vars.outputs.IMAGE_TAG }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: |
