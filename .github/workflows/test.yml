@@ -15,6 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+      - name: Checkout Repo
+        uses: actions/checkout@v7
       - name: Lowercase repository owner/name
         id: repo
         run: echo "IMAGE=$(echo 'ghcr.io/${{ github.repository }}' | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
