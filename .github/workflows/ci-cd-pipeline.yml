@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Print event
         run: |
-          echo ${{github.event}}
+          echo ${{github.event_name}}
   eslint:
     runs-on: ubuntu-latest
     steps:
