@@ -51,15 +51,6 @@ export default defineConfig([
       react: { version: "detect" },
     },
     rules: {
-
-      "react/prop-types": "off",
-
-      // JSX runtime: no React import needed
-      "react/react-in-jsx-scope": "off",
-
-
-      // Enforce self-closing tags where possible
-      "react/self-closing-comp": "error",
     },
   },
 ]);
