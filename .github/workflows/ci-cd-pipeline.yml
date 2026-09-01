@@ -18,6 +18,9 @@ jobs:
       - name: Print event
         run: |
           echo "${{github.event_name}}"
+          echo "${{github.repository_owner}}"
+          echo "${{github.event_name}}"
+          echo "${{github.event_name}}"
   eslint:
     runs-on: ubuntu-latest
     steps:
