@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Print event
         run: |
-          echo ${{github.event_name}}
+          echo "${{github.event_name}}"
   eslint:
     runs-on: ubuntu-latest
     steps:
@@ -41,7 +41,6 @@ jobs:
 
       - name: Install Bun
         uses: oven-sh/setup-bun@v2
-
 
       - name: Install dependencies
         run: bun install --ignore-scripts --frozen-lockfile
