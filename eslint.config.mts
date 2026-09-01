@@ -28,8 +28,7 @@ export default defineConfig([
       ecmaVersion: "latest",
       sourceType: "module",
     },
-    plugins: {
-    },
+    plugins: {},
     ...js.configs.recommended,
   },
 
@@ -45,12 +44,10 @@ export default defineConfig([
         ecmaFeatures: { jsx: true },
       },
     },
-    plugins: {
-    },
+    plugins: {},
     settings: {
       react: { version: "detect" },
     },
-    rules: {
-    },
+    rules: {},
   },
 ]);
